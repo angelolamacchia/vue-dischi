@@ -15,19 +15,28 @@
 <body>
     <div class="container-fluid" id="app">
         <header>
-            <img src="img/Spotify_logo.png" alt="">
+            <img src="img/Spotify_logo.png">
+
+            <select class="form-select" v-model="selected" >
+                <option></option>
+                <option v-for="genre in songsGenre">{{genre}}</option>
+            </select>
         </header>
 
         <main>
             <div class="row">
-                <div class="wrapper col-lg-3 col-md-6 col-sm-12" v-for="song in songs">
+                <div class="wrapper col-lg-3 col-md-6 col-sm-12" v-for="song in songs" 
+                :class=" selected == '' ? 'active' : selected == 'Rock' && song.genre == 'Rock' ? 'active' : 
+                selected == 'Metal' && song.genre == 'Metal' ? 'active' : 
+                selected == 'Pop' && song.genre == 'Pop' ? 'active' : 
+                selected == 'Jazz' && song.genre == 'Jazz' ? 'active': 'notActive' ">
                     <div class="card"> 
                         <img :src="song.poster">
                         <div class="song_title">
                             {{song.title}}
                         </div> 
-                        <div class="artist">{{song.author}}</div>
-                        <div class="year">{{song.year}}</div>
+                        <div class="artist text_grey">{{song.author}}</div>
+                        <div class="year text_grey">{{song.year}}</div>
                     </div>
                 </div>
             </div>

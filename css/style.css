@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+.text_grey {
+    color: grey;
+}
+
 .container-fluid {
     font-family: 'Roboto', sans-serif;
     width: 100%;
@@ -17,9 +21,17 @@ header {
     margin: 0;
     height: 80px;
     background-color: #2e3a46;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+select {
+    margin: 20px; 
 }
 
 header img {
+    align-self: flex-start;
     height: 60px;
     margin: 10px;
 }
@@ -55,4 +67,12 @@ main {
     color: white;
     font-weight: bolder;
     font-size: 20px;
+}
+
+.active {
+    display: block;
+}
+
+.notActive {
+    display: none;
 }
