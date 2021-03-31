@@ -28,10 +28,14 @@ header {
 
 select {
     margin: 20px; 
+    padding: 5px;
+}
+
+button {
+    padding: 5px;
 }
 
 header img {
-    align-self: flex-start;
     height: 60px;
     margin: 10px;
 }

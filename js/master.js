@@ -19,12 +19,20 @@ var app = new Vue ({
 
             if (this.songs.length == 10) {
                 this.songs.forEach((element, index) => {
+
+                    //popolo l'array con i generi delle canzoni
                     if (!this.songsGenre.includes(element.genre)) {
                         this.songsGenre.push(element.genre);
-                    };
-
+                    }; 
                 });
-            }
+            };
         });  
     },
+
+    methods: {
+        orderSongs() {
+            //funzione per ordinare le canzoni
+            this.songs.sort( (a,b)=>(parseInt(a.year) < parseInt(b.year) ) ? -1:1);
+        }
+    }
 });
