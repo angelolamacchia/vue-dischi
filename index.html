@@ -31,10 +31,7 @@
         <main>
             <div class="row"> <!-- modifico la classe active al cambiamento del select -->
                 <div class="wrapper col-lg-3 col-md-6 col-sm-12" v-for="song in songs" 
-                :class=" selected == '' ? 'active' : selected == 'Rock' && song.genre == 'Rock' ? 'active' : 
-                selected == 'Metal' && song.genre == 'Metal' ? 'active' : 
-                selected == 'Pop' && song.genre == 'Pop' ? 'active' : 
-                selected == 'Jazz' && song.genre == 'Jazz' ? 'active': 'notActive' ">
+                :class=" selected == '' ? 'active' : selected == song.genre ? 'active' : 'notActive' ">
                     <div class="card"> 
                         <img :src="song.poster">
                         <div class="song_title">
